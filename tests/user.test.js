@@ -14,10 +14,8 @@ describe('/api/v1/user', () => {
       created_at: expect.any(String),
     });
 
-    console.log(res.user);
-
-    const { statusCode } = await res.agent.get('/api/v1/user/verify');
-    expect(statusCode).toBe(200);
+    const test = await res.agent.get('/api/v1/user/verify');
+    expect(test.statusCode).toBe(200);
   });
 
   it('/signup with duplicate email', async () => {
